@@ -383,6 +383,33 @@ networks:
 - Ele indica que esse container tem uma dependencia de outro container. Então ele manda esperar e só subir esse container após o informado aqui já ter subido.
 - Podem ocorrer erros dependendo de como a imagem foi implementada e esse comando pode não funcionar.
 
+### Rodando essa estrutura completa
+
+- Rodamos o comando:
+
+```Dockerfile
+docker compose up
+```
+
+- Agora já estão disponiveis os endpoint da aplicação. Podemos acessar o localhost9091.
+
+- Podemos abrir o cmd e dar o comando para ver se a interação com a porta foi bem sucedida
+
+```Dockerfile
+telnet localhost 27017
+```
+
+- Podemos usar o mongo por linha de comando com os seguintes comandos:
+
+```Dockerfile
+docker exec -it {MONGO_CONTAINER_ID} mongo -u root
+use database_filmes
+show collections
+db.filmes.find()
+```
+
+- docker exec -it {MONGO_CONTAINER_ID} mongo -u root Com esse comando nós estamos subindo um novo container mas com o client do mongo
+
 ---
 
 ## Outro exemplo nesse mesmo projeto
