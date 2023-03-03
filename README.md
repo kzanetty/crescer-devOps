@@ -220,6 +220,7 @@ docker run -d -p 8080:8080 --mount type=volume,source=NOMEDOVOLUME,target=/LOCAL
 
 ```dockerfile
 docker exec -ti IDDOCONTAINER /bin/bash
+cd /
 ls
 cd NOMEDOVOLUME (ou será que é o nome do source??)
 touch NOMEDAPASTAQUEESTAMOSCRIANDODENTRO
@@ -227,6 +228,7 @@ exit
 ```
 
 - /bin/bash estamos entrando dentro do container
+- cd / ira voltar uma pasta.
 - ls ira listar as pastas dentro do container
 - cd ira entrar na pasta especificada
 - touch ira criar uma pasta
@@ -239,29 +241,29 @@ exit
 Exemplo de comando:
 
 ```Dockerfile
-docker run -d -p 8080:8080 --mount type=bind, source="$(pwd)/volume-crescer", target=/crescer --name helloworldcontainer helloworld:0.0.1
+docker run -d -p 8080:8080 --mount type=bind,source="$(pwd)/volume-crescer",target=/crescer --name helloworldcontainer helloworld:0.0.1
 ```
 
-- source="$(pwd)/volume-crescer" - Aqui nesse source nós informamos o path para a pasta onde o volume ira ficar salvo. O comando $(pwd) é o path para o local em que estamos atualmente.
-- ??????????????????????????????????????????
-- DUVIDA sobre target=/crescer !!!!!!!!!!
-- target=/crescer é um path ou é o volume criado??
+- type=bind informa que estamos criando uma pasta e emprestando ela como volume. Nesse caso, a pasta que criamos e emprestamos é a "source="$(pwd)/volume-crescer"
+- source="$(pwd)/volume-crescer" - Aqui nesse source nós informamos o path para a pasta onde o volume ira ficar salvo. O comando $(pwd) é o path para o local em que estamos atualmente. Esse path é criado no nosso root e não no container
+- target=/crescer é o nome da pasta que existira dentro do container e onde os arquivos de volume criado serão salvos.
 
 ### comandos opcionais para interagir com o a pasta:
 
 ```dockerfile
 docker exec -ti IDDOCONTAINER /bin/bash
+cd /
 ls
 cd crescer
 touch NOMEDAPASTAQUEESTAMOSCRIANDODENTRO
--- inserimos informações aqui pelo proprio root - de forma manual.
-catch NOMEDAPASTAQUEESTAMOSCRIANDODENTRO
+cat NOMEDAPASTAQUEESTAMOSCRIANDODENTRO
 exit
 ```
 
 - /bin/bash estamos entrando dentro do container
 - ls ira listar as pastas dentro do container
 - cd ira entrar na pasta especificada
+- cd / ira voltar uma pasta.
 - touch ira criar uma pasta
-- catch ira exibir o conteudo daquela pasta
+- cat ira exibir o conteudo daquela pasta
 - exit ira sair para o root novamente
