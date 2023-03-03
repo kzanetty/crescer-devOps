@@ -267,3 +267,28 @@ exit
 - touch ira criar uma pasta
 - cat ira exibir o conteudo daquela pasta
 - exit ira sair para o root novamente
+
+---
+
+# Multi-stage
+
+- O Docker Multi-stage facilita nossa vida para subir vários contêineres de uma só vez.
+- Multi-stage são úteis para qualquer pessoa que tenha lutado para otimizar Dockerfiles, mantendo-os fáceis de ler e manter.
+- Ajuda a manter o tamanho das imagens baixo.
+
+- Exemplo de multi-stage:
+
+```Dockerfile
+FROM maven:3.6.0-jdk-11-slim AS build
+WORKDIR /app
+COPY src /app/src
+COPY pom.xml /app
+RUN mvn -f /app/pom.xml clean package
+
+FROM openjdk:11-jre-slim
+COPY --from=build app/target/hellodocker-0.0.1-SNAPSHOT.jar /usr/local/lib/hellodocker-0.0.1.jar
+EXPOSE 8080
+ENTRYPOINT ["java", "-jar", "/usr/local/lib/hellodocker-0.0.1.jar"]
+```
+
+- A primeira parte gera apenas uma sub-imagem que será usada para buildar nossa aplicação e ela não sera enviada na imagem. Apenas a segunda parte será enviada na nossa imagem, deixando a imagem mais leve.
