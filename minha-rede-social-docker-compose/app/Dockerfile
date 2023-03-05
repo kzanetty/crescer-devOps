@@ -1,6 +1,6 @@
 FROM node:alpine
 WORKDIR /app
-COPY . /app/
+COPY ./app /app/
 RUN npm ci 
 RUN npm run build
 EXPOSE 8080
