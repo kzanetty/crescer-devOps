@@ -1,0 +1,46 @@
+version: "3"
+services:
+         
+    db:
+        image: postgres:latest
+        container_name: container-postgres-db
+        environment:
+        - POSTGRES_USER=postgres
+        - POSTGRES_PASSWORD=1234
+        - POSTGRES_DB="Berk"
+        volumes:
+        - postgresdb_volume:/var/lib/postgresql/data
+        ports:
+        - "8080:8080"
+        networks:
+        - api
+    
+    api:
+        image: backend:latest
+        container_name: container-backend
+        environment:
+
+        - mongodb.uri=mongodb://root:password@mongodb:27017
+
+        ports:
+        - 8080:8080"
+        networks:
+            - api
+            - front
+        depends_on:
+            - db
+
+    front:
+        image: frontend:0.2
+        container_name: container-frontend
+        ports:
+            - "3000:3000"
+        networks:
+            - api
+            - front
+        depends_on:
+            - db
+            - api
+
+volumes:
+  postgresdb_volume:

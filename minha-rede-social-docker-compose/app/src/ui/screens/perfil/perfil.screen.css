@@ -1,0 +1,21 @@
+.informacoes-iniciais-perfil-screen {
+  display: flex;
+  justify-content: space-around;
+  margin: 10px 0;
+}
+
+.interações {
+  padding: 10px;
+  display: flex;
+  gap: 25px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (max-width: 1250px) {
+  .informacoes-iniciais-perfil-screen {
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+  }
+}

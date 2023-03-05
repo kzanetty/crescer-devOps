@@ -1,0 +1,36 @@
+.navlist_container {
+  background-color: rgba(0, 0, 0, 0.438);
+  padding: 1rem 2rem;
+  color: white;
+}
+
+.navlist_container > ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+  gap: 20px;
+}
+
+.options_nav_list_component {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  border-radius: 5px;
+  width: 70px;
+  height: 30px;
+  padding: 0 50px;
+}
+
+.options_nav_list_component:hover {
+  background-color: rgb(122, 105, 58);
+}
+
+.button_nav_list {
+  color: white;
+  font-size: 20px;
+}
+
+a:-webkit-any-link {
+  color: white;
+}

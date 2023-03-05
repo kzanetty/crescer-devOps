@@ -1,0 +1,29 @@
+.container-formulario-criar-conta {
+  width: 100%;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.formulario-criar-conta {
+  height: 80%;
+  min-width: 300px;
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.field-criar-conta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.button-criar-conta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,0 +1,36 @@
+.container-card-amizade {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.card-amizade {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.buttons-amizade {
+  display: flex;
+  margin: 5px;
+  gap: 5px;
+}
+
+.card-amigo-screen-amigo {
+  text-align: center;
+}
+
+.input-pesquisa-nome-email {
+  height: 30px;
+  width: 300px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.input-pesquisa-nome-email:hover,
+.input-pesquisa-nome-email:focus {
+  background-color: rgb(122, 105, 58);
+}

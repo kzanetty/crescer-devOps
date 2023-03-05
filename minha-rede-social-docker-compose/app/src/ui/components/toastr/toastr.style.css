@@ -1,0 +1,30 @@
+.toastr {
+  z-index: 20;
+  position: fixed;
+  top: 50px;
+  left: 50px;
+  padding: 10px;
+  display: flex;
+  width: 300px;
+  height: auto;
+  align-items: center;
+  background-color: rgba(150, 150, 150, 0.397);
+  padding: 10px 20px;
+  border: 1px solid #5c5c5c54;
+  color: rgb(255, 255, 255);
+  display: flex;
+  align-content: center;
+  flex-direction: column;
+  justify-content: space-around;
+  flex-direction: column;
+  animation: blinker 1s linear infinite;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0.5;
+  }
+}

@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  background-image: url("https://images6.alphacoders.com/102/1022915.jpg");
+  background-size: cover;
+}
+
+a:-webkit-any-link {
+  text-decoration: none;
+}
+
+.color-green {
+  color: green;
+  font-size: 30px;
+}
+
+.label-input-edicao {
+  font-size: 20px;
+  font-weight: bold;
+}

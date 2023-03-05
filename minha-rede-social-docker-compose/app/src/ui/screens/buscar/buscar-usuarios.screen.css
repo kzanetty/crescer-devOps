@@ -1,0 +1,24 @@
+.conteudo-screen-buscar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container-usuarios-disponiveis {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.input-screen-buscar {
+  margin: 10px;
+}
+
+.cards-usuarios-screen-buscar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}

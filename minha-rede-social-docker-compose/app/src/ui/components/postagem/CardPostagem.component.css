@@ -1,0 +1,73 @@
+.card-postagem {
+  border-radius: 10px;
+  width: 500px;
+  height: 500px;
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  position: relative;
+  background-color: #fff;
+}
+
+.visibilidade-postagem {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
+.imagem-postagem {
+  border-radius: 10px;
+  max-width: 300px;
+}
+
+.button-like,
+.button-comentario {
+  background-color: #0a0a0a11;
+
+  width: 100px;
+  height: 40px;
+  border-radius: 10px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+.button-like:hover,
+.button-like:focus,
+.button-comentario:hover,
+.button-comentario:focus {
+  background-color: #b4b2b2;
+}
+
+.interacoes-card-postagem {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.buttons-card-postagem {
+  display: flex;
+  justify-content: space-around;
+}
+
+.image-like {
+  width: 50px;
+}
+
+.icon-like-numero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 40px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.descricao-postagem {
+  background-color: white;
+  padding: 3px;
+  border-radius: 10px;
+}
