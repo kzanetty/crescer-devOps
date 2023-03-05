@@ -3,6 +3,7 @@ version: "3.1"
 services:
   PostgreSQL:
     image: postgres:latest
+    container_name: minha-rede-social-postgres
     ports:
       - "5432:5432"
     environment:
@@ -20,6 +21,7 @@ services:
       retries: 5
 
   api:
+    container_name: minha-rede-social-backend
     build:
       context: .
       dockerfile: ./api/Dockerfile
@@ -35,9 +37,12 @@ services:
       - SPRING_JPA_HIBERNATE_DDL_AUTO=validate
 
   front:
+    container_name: minha-rede-social-frontend
     build:
       context: .
       dockerfile: ./app/Dockerfile
+    depends_on:
+      - api
     ports:
       - "3000:3000"
 
